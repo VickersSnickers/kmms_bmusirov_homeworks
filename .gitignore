@@ -1,5 +1,4 @@
 .vscode
-test*
 lib/
 *.exe
 *.ii
