@@ -7,6 +7,7 @@ add_subdirectory(lib/googletest)
 
 # add_subdirectory(menu)
 # add_subdirectory(sortings)
-add_subdirectory(long_number)
+# add_subdirectory(long_number)
+add_subdirectory(vector_list)
 
 set(CMAKE_SUPRESS_REGENERATION true)
