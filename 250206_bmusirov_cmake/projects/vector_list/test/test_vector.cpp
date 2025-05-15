@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "e:\ProgramFiles\Projects\C++GitReps\kmms_bmusirov_homeworks\250206_bmusirov_cmake\projects\vector_list\src\vector.hpp"
+#include "vector.hpp"
 
 using mbr::Vector;
 
