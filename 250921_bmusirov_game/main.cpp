@@ -81,10 +81,22 @@ void InitObject(TObject *obj, float xPos, float yPos, float oWidth, float oHeigh
     obj->horizonSpeed = 0.2;
 }
 
+void DeleteMoving(int i){
+    --movingLength;
+    moving[i] = moving[movingLength];
+    moving = new TObject[movingLength];
+}
+
 void MarioCollision(){
     for (int i = 0; i < movingLength; ++i){
         if (IsCollision(mario, moving[i])){
-            CreateLevel(level);
+            if (mario.IsFly == TRUE && mario.vertSpeed > 0 && mario.y + mario.height < moving[i].y + moving[i].height * 0.5){
+                DeleteMoving(i);
+                --i;
+                continue;
+            } else {
+                CreateLevel(level);
+            }
         }
     }
 }
