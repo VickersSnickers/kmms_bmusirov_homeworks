@@ -144,13 +144,14 @@ void CreateLevel(int lvl){
         InitObject(brick+0, 20, 20, 40, 5, '#');
         InitObject(brick+1, 80, 20, 15, 5, '#');
         InitObject(brick+2, 120, 15, 15, 10, '#');
-        InitObject(brick+5, 160, 10, 15, 15, '+');
+        InitObject(brick+3, 160, 10, 15, 15, '+');
     }
 }
 
 int main(){
     //HideCursor();
     CreateLevel(level);
+    system("color 9F");
 
     while (GetKeyState(VK_ESCAPE) >= 0){
         ClearMap();
