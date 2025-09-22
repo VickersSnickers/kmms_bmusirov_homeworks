@@ -98,12 +98,19 @@ void DeleteMoving(int i){
 void MarioCollision(){
     for (int i = 0; i < movable_count; ++i){
         if (IsCollision(mario, moving[i])){
-            if (mario.IsFly == TRUE && mario.vertSpeed > 0 && mario.y + mario.height < moving[i].y + moving[i].height * 0.5){
+            if (moving[i].cType == 'o'){
+                if (mario.IsFly == TRUE && mario.vertSpeed > 0 && mario.y + mario.height < moving[i].y + moving[i].height * 0.5){
+                    DeleteMoving(i);
+                    --i;
+                    continue;
+                } else {
+                    CreateLevel(level);
+                }
+            }
+            if (moving[i].cType == '$'){
                 DeleteMoving(i);
                 --i;
                 continue;
-            } else {
-                CreateLevel(level);
             }
         }
     }
