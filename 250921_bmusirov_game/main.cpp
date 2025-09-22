@@ -126,7 +126,7 @@ void HorizonMoveObject(TObject *obj){
             obj[0].horizonSpeed = -obj[0].horizonSpeed;
         }
     }
-    
+
 }
 
 bool IsPosInMap(int x, int y){
@@ -186,6 +186,10 @@ bool IsCollision(TObject o1, TObject o2){
 
 void CreateLevel(int lvl){
 
+    brick_count = 0;
+    movable_count = 0;
+    delete bricks;
+    delete moving;
     InitObject(&mario, 39, 10, 3, 3, '@');
 
         if (lvl == 1){
